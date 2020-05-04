@@ -35,16 +35,12 @@ import { Component } from '@angular/core';
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Example</h2>
-          <p>Content example</p>
-        </div>
-      </div>
-
-      <hr>
+      <bs-book-detail></bs-book-detail>
+      <bs-book-form></bs-book-form>
+      <bs-book-list></bs-book-list>
     </div>
 
+    <hr>
   </main>
 
   <footer class="container">
