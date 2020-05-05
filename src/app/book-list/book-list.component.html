@@ -1,0 +1,12 @@
+<h2>List all the books - {{numberOfBooks}}</h2>
+<ul class="list-unstyle">
+    <li class="media" *ngFor="let book of books">
+        <img class="mr-4" src="{{book.imageUrl}}" />
+        <div class="media-body">
+            <h2 class="mt-0"><a [routerLink]="['/book-detail', book.id]">{{book.title}}</a></h2>
+            <p class="mt-3">{{book.description}}</p>
+            <p class="mt-1">Language: <span>{{book.language}}</span></p>
+            <p class="mt-1">Pages: <span>{{book.numberOfPages}}</span></p>
+        </div>
+    </li>
+</ul>
