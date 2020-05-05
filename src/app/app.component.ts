@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'bs-root',
   template: `
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" [routerLink]="['/home']">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bookstoreNavbar" aria-controls="bookstoreNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,13 +12,10 @@ import { Component } from '@angular/core';
     <div class="collapse navbar-collapse" id="bookstoreNavbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Create</a>
+          <a class="nav-link" [routerLink]="['/create']">Create</a>
         </li>
       </ul>
     </div>
@@ -35,9 +32,7 @@ import { Component } from '@angular/core';
     </div>
 
     <div class="container">
-      <bs-book-detail></bs-book-detail>
-      <bs-book-form></bs-book-form>
-      <bs-book-list></bs-book-list>
+      <router-outlet></router-outlet>
     </div>
 
     <hr>
@@ -46,8 +41,6 @@ import { Component } from '@angular/core';
   <footer class="container">
     <p>Made with passion by Javier de Arcos</p>
   </footer>
-
-  <router-outlet></router-outlet>
   `,
   styles: []
 })

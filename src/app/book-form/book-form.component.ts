@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bs-book-form',
   template: `
     <h2>Create a new book</h2>
-    <form>
+    <form (ngSubmit)="create()">
       <div class="form-group row">
         <label class="col-2 col-form-label">Title</label>
         <div class="col-10">
@@ -57,13 +58,15 @@ import { Component, OnInit } from '@angular/core';
       </div>
     
       <button type="submit" class="btn btn-primary">Create</button>
-      <a class="btn btn-secondary" href="" role="button">Cancel</a>
+      <a class="btn btn-secondary" [routerLink]="['/home']" role="button">Cancel</a>
     </form>
   `,
   styles: [
   ]
 })
 export class BookFormComponent implements OnInit {
+
+  private router: Router;
 
   book = {
     title: "Easy Learning Javascript",
@@ -75,9 +78,16 @@ export class BookFormComponent implements OnInit {
     imageUrl: "https://m.media-amazon.com/images/I/41UwLrimblL._SX260_.jpg"
   };
 
-  constructor() { }
+  constructor(router: Router) { 
+    this.router = router;
+  }
 
   ngOnInit(): void {
+  }
+
+  create(): void {
+    // TODO: Create book through API
+    this.router.navigate(['/home']);
   }
 
 }
