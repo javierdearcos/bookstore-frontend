@@ -17,7 +17,9 @@
         <div class="col-10">
             <div class="input-group">
                 <input class="form-control" type="number" [(ngModel)]="book.unitCost" name="unitCost">
-                <span class="input-group-addon">$</span>
+                <div class="input-group-append">
+                    <span class="input-group-text">$</span>
+                </div>
             </div>
         </div>
     </div>
@@ -63,6 +65,8 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Create</button>
-    <a class="btn btn-secondary" [routerLink]="['/home']" role="button">Cancel</a>
+    <div class="btn-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a class="btn btn-secondary ml-2" [routerLink]="['/home']" role="button">Cancel</a>
+    </div>
 </form>
